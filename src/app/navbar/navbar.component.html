@@ -1,43 +1,68 @@
 <!-- navbar.component.html -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light border p-3">
-  <a class="navbar-brand" href="#"><img src="https://dummyimage.com/100x50&text=logo"></a>
+  <a class="navbar-brand" href="#"
+    ><img src="https://dummyimage.com/100x50&text=logo"
+  /></a>
   <div class="container" ngbDropdown>
-    <button ngbDropdownToggle
-    class="navbar-toggler hide-caret"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNav"
-    aria-controls="navbarNav"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
+    <button
+      ngbDropdownToggle
+      class="navbar-toggler hide-caret"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Mobile navbar  -->
-    <div class="collapse navbar-collapse navbarNavMobile p-3" ngbDropdownMenu id="navbarNavMobile">
+    <div
+      class="collapse navbar-collapse navbarNavMobile p-3"
+      ngbDropdownMenu
+      id="navbarNavMobile"
+    >
       <ul class="navbar-nav">
         <li class="nav-item dropdown" ngbDropdown>
-          <a class="nav-link dropdown-toggle" ngbDropdownToggle href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a
+            class="nav-link dropdown-toggle"
+            ngbDropdownToggle
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Upcoming Expeditions
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
             <li><a class="dropdown-item" href="#">UE - Action</a></li>
             <li><a class="dropdown-item" href="#">UE - Another action</a></li>
-            <li><a class="dropdown-item" href="#">UE - Something else here</a></li>
+            <li>
+              <a class="dropdown-item" href="#">UE - Something else here</a>
+            </li>
           </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About Us</a>
         </li>
         <li class="nav-item dropdown" ngbDropdown>
-          <a class="nav-link dropdown-toggle" ngbDropdownToggle href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a
+            class="nav-link dropdown-toggle"
+            ngbDropdownToggle
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Gallery
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
             <li><a class="dropdown-item" href="#">G - Action</a></li>
             <li><a class="dropdown-item" href="#">G - Another action</a></li>
-            <li><a class="dropdown-item" href="#">G - Something else here</a></li>
+            <li>
+              <a class="dropdown-item" href="#">G - Something else here</a>
+            </li>
           </ul>
         </li>
         <li class="nav-item">
@@ -50,10 +75,20 @@
     </div>
 
     <!-- Desktop navbar -->
-    <div class="collapse navbar-collapse navbarNavDesktop" id="navbarNavDesktop">
+    <div
+      class="collapse navbar-collapse navbarNavDesktop"
+      id="navbarNavDesktop"
+    >
       <ul class="navbar-nav">
         <li class="nav-item dropdown" ngbDropdown>
-          <a class="nav-link dropdown-toggle" ngbDropdownToggle href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a
+            class="nav-link dropdown-toggle"
+            ngbDropdownToggle
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Upcoming Expeditions
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
@@ -66,7 +101,14 @@
           <a class="nav-link" href="#">About Us</a>
         </li>
         <li class="nav-item dropdown" ngbDropdown>
-          <a class="nav-link dropdown-toggle" ngbDropdownToggle href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a
+            class="nav-link dropdown-toggle"
+            ngbDropdownToggle
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Gallery
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
@@ -76,14 +118,13 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">FAQ</a>
+          <a class="nav-link" href="/faq">FAQ</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact Us</a>
         </li>
       </ul>
     </div>
-
 
     <a class="btn btn-primary" href="#">Sign Up</a>
   </div>
