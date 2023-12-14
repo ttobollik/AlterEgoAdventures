@@ -1,0 +1,12 @@
+<div class="m-3" ngbAccordion>
+  <div ngbAccordionItem *ngFor="let item of faqData.records">
+    <h2 ngbAccordionHeader>
+      <button ngbAccordionButton>{{ item.fields["faq-questions"] }}</button>
+    </h2>
+    <div ngbAccordionCollapse>
+      <div ngbAccordionBody>
+        {{ item.fields["faq-answers"] }}
+      </div>
+    </div>
+  </div>
+</div>
