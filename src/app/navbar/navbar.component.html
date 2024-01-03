@@ -36,10 +36,11 @@
             Upcoming Expeditions
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
-            <li><a class="dropdown-item" href="#">UE - Action</a></li>
-            <li><a class="dropdown-item" href="#">UE - Another action</a></li>
-            <li>
-              <a class="dropdown-item" href="#">UE - Something else here</a>
+            <li
+              *ngFor="let item of upcomingData.records"
+              class="dropdown-item"
+            >
+              <a href="#{{ item?.fields?.idv }}" class="m-4">{{ item?.fields?.title }}</a>
             </li>
           </ul>
         </li>
@@ -92,9 +93,12 @@
             Upcoming Expeditions
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li
+              *ngFor="let item of upcomingData.records"
+              class="dropdown-item"
+            >
+              <a href="#{{ item?.fields?.idv }}" class="m-4">{{ item?.fields?.title }}</a>
+            </li>
           </ul>
         </li>
         <li class="nav-item">

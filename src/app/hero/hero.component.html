@@ -4,7 +4,7 @@
       <h1 class="m-4">Upcoming Expeditions</h1>
     </div>
     <div *ngFor="let item of upcomingData.records" class="row-lg-6 text-center border p-5 mb-2">
-      <img class="img-fluid" src='{{ item?.fields?.main_picture?.[0]?.url }}' alt="#" />
+      <img id="{{ item?.fields?.idv }}" class="img-fluid" src='{{ item?.fields?.main_picture?.[0]?.url }}' alt="#" />
       <h2 class="m-4">{{ item?.fields?.title }}</h2>
       <p class="lead">{{ item?.fields?.description }}</p>
       <p class="lead">{{ item?.fields?.start_date }} to {{ item?.fields?.end_date }}</p>
