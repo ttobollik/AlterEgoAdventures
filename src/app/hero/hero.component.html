@@ -1,18 +1,13 @@
 <div class="container-fluid hero-container bg-light">
-  <div class="row align-items-center">
+  <div class="row align-items-center px-5 pb-5">
     <div class="row-lg-6 text-center">
-      <h1 class="m-4">Next Expeditions</h1>
+      <h1 class="m-4">Upcoming Expeditions</h1>
     </div>
-    <div class="row-lg-6 text-center">
-      <img class="img-fluid" src="https://dummyimage.com/800x600" alt="#" />
-    </div>
-    <div class="text-center col-12 p-4">
-      <p class="lead">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quas
-        ducimus illo eligendi iure debitis saepe recusandae nostrum quis animi
-        ullam minus, rem quo? Nihil facere blanditiis repellat excepturi
-        impedit.
-      </p>
+    <div *ngFor="let item of upcomingData.records" class="row-lg-6 text-center border p-5 mb-2">
+      <img class="img-fluid" src='{{ item?.fields?.main_picture?.[0]?.url }}' alt="#" />
+      <h2 class="m-4">{{ item?.fields?.title }}</h2>
+      <p class="lead">{{ item?.fields?.description }}</p>
+      <p class="lead">{{ item?.fields?.start_date }} to {{ item?.fields?.end_date }}</p>
     </div>
   </div>
 </div>

@@ -2,17 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import e from 'express';
 
 @Injectable({
   providedIn: 'root',
 })
-export class FaqService {
-  private apiUrl = environment.apiUrl + environment.apiFaq;
+export class UpcomingService {
+  private apiUrl = environment.apiUrl + environment.apiUpcoming;
   private token = environment.apiKey;
 
   constructor(private http: HttpClient) {}
 
-  getFaqData(): Observable<any[]> {
+  getUpcomingData(): Observable<any[]> {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.token}`,
     });

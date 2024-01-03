@@ -1,7 +1,8 @@
+<h1 class="text-center fw-bold mt-3">Frequently Asked Questions(FAQ)</h1>
 <div class="m-3" ngbAccordion>
   <div ngbAccordionItem *ngFor="let item of faqData.records">
     <h2 ngbAccordionHeader>
-      <button ngbAccordionButton>{{ item.fields["faq-questions"] }}</button>
+      <button class="fw-bold" ngbAccordionButton>{{ item.fields["faq-questions"] }}</button>
     </h2>
     <div ngbAccordionCollapse>
       <div ngbAccordionBody>
