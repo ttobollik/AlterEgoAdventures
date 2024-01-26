@@ -12,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
-
 export class NavbarComponent implements OnInit {
   isCollapsed = false;
   upcomingData: any = {};
@@ -22,7 +21,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.upcomingService.getUpcomingData().subscribe((data) => {
       this.upcomingData = data;
-      console.log(this.upcomingData);
     });
   }
 }

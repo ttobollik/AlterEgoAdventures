@@ -5,22 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-faq',
+  selector: 'app-about-us',
   standalone: true,
   providers: [FaqService],
   imports: [NgbAccordionModule, HttpClientModule, CommonModule],
-  templateUrl: './faq.component.html',
-  styleUrl: './faq.component.scss',
+  templateUrl: './about-us.component.html',
+  styleUrl: './about-us.component.scss',
 })
-export class FaqComponent implements OnInit {
-  faqData: any = {};
-
-  constructor(private faqService: FaqService) {}
+export class AboutUsComponent implements OnInit {
+ 
 
   ngOnInit(): void {
-    this.faqService.getFaqData().subscribe((data) => {
-      this.faqData = data;
-
-    });
+ 
   }
 }

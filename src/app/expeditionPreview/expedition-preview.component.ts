@@ -4,15 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-hero',
+  selector: 'app-expedition-preview',
   standalone: true,
   providers: [UpcomingService],
   imports: [HttpClientModule, CommonModule],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss',
+  templateUrl: './expedition-preview.component.html',
+  styleUrl: './expedition-preview.component.scss',
 })
-
-export class HeroComponent implements OnInit {
+export class ExpeditionPreviewComponent implements OnInit {
   upcomingData: any = {};
 
   constructor(private upcomingService: UpcomingService) {}
@@ -20,7 +19,6 @@ export class HeroComponent implements OnInit {
   ngOnInit(): void {
     this.upcomingService.getUpcomingData().subscribe((data) => {
       this.upcomingData = data;
-      console.log(this.upcomingData);
     });
   }
 }

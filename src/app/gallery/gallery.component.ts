@@ -5,22 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-faq',
+  selector: 'app-gallery',
   standalone: true,
   providers: [FaqService],
   imports: [NgbAccordionModule, HttpClientModule, CommonModule],
-  templateUrl: './faq.component.html',
-  styleUrl: './faq.component.scss',
+  templateUrl: './gallery.component.html',
+  styleUrl: './gallery.component.scss',
 })
-export class FaqComponent implements OnInit {
-  faqData: any = {};
-
-  constructor(private faqService: FaqService) {}
-
-  ngOnInit(): void {
-    this.faqService.getFaqData().subscribe((data) => {
-      this.faqData = data;
-
-    });
-  }
+export class GalleryComponent implements OnInit {
+  ngOnInit(): void {}
 }
