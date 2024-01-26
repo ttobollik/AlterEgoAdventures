@@ -1,7 +1,7 @@
 <!-- navbar.component.html -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light border p-3">
-  <a class="navbar-brand" href="#"
-    ><img src="https://dummyimage.com/100x50&text=logo"
+  <a class="navbar-brand" href="."
+    ><img src="assets/img/logo.png" class="logo"
   /></a>
   <div class="container" ngbDropdown>
     <button
@@ -40,7 +40,7 @@
           <ul class="dropdown-menu" ngbDropdownMenu>
             <li *ngFor="let item of upcomingData.records">
               <a
-                href="./expidition/{{ item.fields?.idv }}"
+                href="./expedition/{{ item.fields?.idv }}"
                 class="dropdown-item"
                 >{{ item?.fields?.title }}</a
               >
@@ -61,10 +61,14 @@
             Gallery
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
-            <li><a class="dropdown-item" href="#">G - Action</a></li>
-            <li><a class="dropdown-item" href="#">G - Another action</a></li>
+            <li><a class="dropdown-item" href="./gallery/1">G - Action</a></li>
             <li>
-              <a class="dropdown-item" href="#">G - Something else here</a>
+              <a class="dropdown-item" href="./gallery/1">G - Another action</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="./gallery/1"
+                >G - Something else here</a
+              >
             </li>
           </ul>
         </li>
@@ -98,9 +102,11 @@
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
             <li *ngFor="let item of upcomingData.records">
-              <a href="./expidition/{{ item.fields?.idv }}" class="dropdown-item">{{
-                item?.fields?.title
-              }}</a>
+              <a
+                href="./expedition/{{ item.fields?.idv }}"
+                class="dropdown-item"
+                >{{ item?.fields?.title }}</a
+              >
             </li>
           </ul>
         </li>
@@ -111,7 +117,6 @@
           <a
             class="nav-link dropdown-toggle"
             ngbDropdownToggle
-            href="./about-us"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -119,9 +124,15 @@
             Gallery
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="./gallery/1">Action</a></li>
+            <li>
+              <a class="dropdown-item" href="./gallery/1">Another action</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="./gallery/1"
+                >Something else here</a
+              >
+            </li>
           </ul>
         </li>
         <li class="nav-item">

@@ -4,9 +4,17 @@ body {
   height: 100%;
 }
 body {
-  margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   color: $text-color !important;
+  font-size: larger !important;
+  font-weight: lighter !important;
+}
+
+.main-layout {
+  text-align: center !important;
+  @media (min-width: 900px) {
+    margin: 0 10rem !important;
+  }
 }
 
 /* Importing Bootstrap SCSS file. */
@@ -19,4 +27,3 @@ body {
     transform: translateX(-50%);
   }
 }
-

@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { FaqComponent } from './faq/faq.component';
 import { ExpeditionPreviewComponent } from './expeditionPreview/expedition-preview.component';
-import { ExpiditionComponent } from './expidition/expidition.component';
+import { ExpeditionComponent } from './expedition/expedition.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -12,8 +12,8 @@ export const routes: Routes = [
     component: ExpeditionPreviewComponent,
   },
   {
-    path: 'expidition/:id',
-    component: ExpiditionComponent,
+    path: 'expedition/:id',
+    component: ExpeditionComponent,
   },
   {
     path: 'faq',
@@ -24,7 +24,7 @@ export const routes: Routes = [
     component: AboutUsComponent,
   },
   {
-    path: 'gallery',
+    path: 'gallery/:id',
     component: GalleryComponent,
   },
   {

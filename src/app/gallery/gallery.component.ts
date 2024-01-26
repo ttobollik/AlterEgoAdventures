@@ -13,5 +13,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './gallery.component.scss',
 })
 export class GalleryComponent implements OnInit {
+  images = [
+    { src: 'https://picsum.photos/300/200', alt: 'test' },
+    { src: 'https://picsum.photos/300/600', alt: 'test' },
+    { src: 'https://picsum.photos/300/400', alt: 'test' },
+    { src: 'https://picsum.photos/300/500', alt: 'test' },
+    { src: 'https://picsum.photos/300/300', alt: 'test' },
+    { src: 'https://picsum.photos/300/200', alt: 'test' },
+    { src: 'https://picsum.photos/300/100', alt: 'test' },
+    { src: 'https://picsum.photos/300/600', alt: 'test' },
+  ];
   ngOnInit(): void {}
 }

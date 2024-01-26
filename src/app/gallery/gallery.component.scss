@@ -1,0 +1,25 @@
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  padding: 1rem;
+
+  .gallery-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .image-gallery {
+    grid-template-columns: 1fr;
+  }
+}

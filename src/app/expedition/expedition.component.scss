@@ -1,11 +1,4 @@
 @import "../../variables.scss";
-.body {
-  text-align: center;
-  margin: 0 10rem; // 10rem margin on left and right sides
-  @media (min-width: 768px) {
-    margin: 0 10rem;
-  }
-}
 
 .pricing {
   display: flex;
@@ -49,8 +42,6 @@ h3 {
 }
 
 p {
-  font-size: larger;
-  font-weight: lighter;
   padding: 1rem 0rem;
 }
 

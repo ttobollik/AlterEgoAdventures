@@ -8,4 +8,32 @@
   .navbarNavMobile {
     display: none !important;
   }
+  .navbarNavDesktop {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically (if needed) */
+    width: 100%; /* Ensure the container takes full width */
+  }
+
+  .navbarNavDesktop .navbar-nav {
+    display: flex; /* Enable flexbox for the nav list */
+    justify-content: center; /* Center items horizontally */
+    width: 100%; /* Ensure the nav list takes full width */
+  }
+
+  .navbarNavDesktop .nav-item {
+    margin-right: 20px; /* Spacing between items */
+  }
+
+  .navbarNavDesktop .nav-item:last-child {
+    margin-right: 20px; /* Remove margin for the last item */
+  }
+}
+.logo {
+  width: 70px;
+  height: auto;
+
+  @media (min-width: 992px) {
+    margin-left: 20px;
+  }
 }
