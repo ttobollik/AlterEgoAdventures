@@ -5,6 +5,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FaqComponent } from './faq/faq.component';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { ExpeditionPreviewComponent } from './expeditionPreview/expedition-preview.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { ExpeditionPreviewComponent } from './expeditionPreview/expedition-previ
     ExpeditionPreviewComponent,
     NgbAccordionModule,
     FaqComponent,
+    HttpClientModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UpcomingService } from '../services/upcoming.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-expedition-preview',
@@ -11,14 +12,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './expedition-preview.component.html',
   styleUrl: './expedition-preview.component.scss',
 })
-export class ExpeditionPreviewComponent implements OnInit {
-  upcomingData: any = {};
+export class ExpeditionPreviewComponent {
+  upcomingData$: Observable<any> = this.upcomingService.getUpcomingData();
 
   constructor(private upcomingService: UpcomingService) {}
-
-  ngOnInit(): void {
-    this.upcomingService.getUpcomingData().subscribe((data) => {
-      this.upcomingData = data;
-    });
-  }
 }

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, map, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
-import e from 'express';
+import { Data } from '@angular/router';
+import { Record } from '../models/expedition.models';
 
 @Injectable({
   providedIn: 'root',
@@ -11,13 +12,36 @@ export class UpcomingService {
   private apiUrl = environment.apiUrl + environment.apiUpcoming;
   private token = environment.apiKey;
 
-  constructor(private http: HttpClient) {}
+  private upcomingDataSubject = new BehaviorSubject<any[]>([]);
+  public upcomingData$: Observable<any[]> =
+    this.upcomingDataSubject.asObservable();
 
-  getUpcomingData(): Observable<any[]> {
+  constructor(private http: HttpClient) {
+    this.loadUpcomingData();
+  }
+
+  private loadUpcomingData() {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.token}`,
     });
 
-    return this.http.get<any[]>(this.apiUrl, { headers });
+    this.http
+      .get<Data>(this.apiUrl, { headers })
+      .pipe(
+        tap((data) => {
+          this.upcomingDataSubject.next(data['records']);
+        })
+      )
+      .subscribe();
+  }
+
+  getUpcomingData(): Observable<any[]> {
+    return this.upcomingData$;
+  }
+
+  getRecordById(id: string): Observable<Record | undefined> {
+    return this.upcomingData$.pipe(
+      map((dataArray) => dataArray.find((item) => item.id === id))
+    );
   }
 }

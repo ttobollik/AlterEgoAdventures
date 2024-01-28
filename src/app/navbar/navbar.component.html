@@ -39,11 +39,9 @@
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
             <li *ngFor="let item of upcomingData.records">
-              <a
-                href="./expedition/{{ item.fields?.idv }}"
-                class="dropdown-item"
-                >{{ item?.fields?.title }}</a
-              >
+              <a href="./expedition/{{ item.id }}" class="dropdown-item">{{
+                item?.fields?.title
+              }}</a>
             </li>
           </ul>
         </li>
@@ -102,11 +100,9 @@
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
             <li *ngFor="let item of upcomingData.records">
-              <a
-                href="./expedition/{{ item.fields?.idv }}"
-                class="dropdown-item"
-                >{{ item?.fields?.title }}</a
-              >
+              <a href="./expedition/{{ item.id }}" class="dropdown-item">{{
+                item?.fields?.title
+              }}</a>
             </li>
           </ul>
         </li>
