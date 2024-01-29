@@ -99,7 +99,7 @@
             Upcoming Expeditions
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
-            <li *ngFor="let item of upcomingData.records">
+            <li *ngFor="let item of upcomingData">
               <a href="./expedition/{{ item.id }}" class="dropdown-item">{{
                 item?.fields?.title
               }}</a>
@@ -139,7 +139,6 @@
         </li>
       </ul>
     </div>
-
-    <a class="btn btn-primary" href="#">Sign Up</a>
+      <a class="btn btn-primary" href="#">Sign Up</a>
   </div>
 </nav>

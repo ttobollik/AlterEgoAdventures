@@ -43,6 +43,6 @@ export class ExpeditionComponent {
   );
 
   ngOnInit() {
-    this.expedition$.subscribe((x) => console.log(x?.fields));
+    //this.expedition$.subscribe((x) => console.log(x?.fields));
   }
 }

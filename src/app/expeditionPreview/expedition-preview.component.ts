@@ -15,5 +15,7 @@ import { Observable } from 'rxjs';
 export class ExpeditionPreviewComponent {
   upcomingData$: Observable<any> = this.upcomingService.getUpcomingData();
 
-  constructor(private upcomingService: UpcomingService) {}
+  constructor(private upcomingService: UpcomingService) {
+    //this.upcomingData$.subscribe((x) => console.log(x));
+  }
 }

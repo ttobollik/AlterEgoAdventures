@@ -12,7 +12,7 @@
           <img
             id="{{ item?.fields?.idv }}"
             class="img-fluid"
-            src="{{ item?.fields?.main_picture?.[0]?.url }}"
+            [src]="item.fields.main_picture"
           />
         </a>
         <h2 class="m-4">{{ item?.fields?.title }}</h2>

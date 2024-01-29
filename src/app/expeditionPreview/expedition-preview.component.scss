@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+  .container-fluid {
+    margin: 5px !important; /* Adjust the margin as needed for mobile view */
+  }
+
+  .row {
+    padding: 5px !important; /* Adjust padding if needed */
+  }
+
+  /* Any other mobile-specific styles */
+}
+
+.container-fluid {
+  background-color: white !important;
+}
+
+img {
+  max-height: 500px;
+}

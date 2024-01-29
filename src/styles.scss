@@ -11,6 +11,7 @@ body {
 }
 
 .main-layout {
+  padding-bottom: 2rem !important;
   text-align: center !important;
   @media (min-width: 900px) {
     margin: 0 10rem !important;
@@ -26,4 +27,14 @@ body {
     left: 50%;
     transform: translateX(-50%);
   }
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
+.btn-primary:hover {
+  background-color: $primary-color-subdued;
+  border-color: $primary-color-subdued;
 }
