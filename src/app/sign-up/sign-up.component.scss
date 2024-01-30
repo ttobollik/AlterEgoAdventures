@@ -1,0 +1,28 @@
+@import "../../variables.scss";
+
+.form-group {
+  padding-bottom: 1rem;
+}
+
+.modal-body {
+  font-size: smaller;
+}
+label {
+  padding-bottom: 0.2rem;
+}
+
+.modal-header {
+  display: flex;
+  .modal-title {
+    margin: 0px;
+  }
+
+  .btn {
+    font-size: larger;
+    color: $text-color;
+  }
+}
+.invalid {
+  font-size: smaller;
+  color: $secondary-color;
+}

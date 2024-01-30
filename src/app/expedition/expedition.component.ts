@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import {
   NgbAccordionModule,
   NgbCarouselModule,
 } from '@ng-bootstrap/ng-bootstrap';
-import { FaqService } from '../services/faq.service';
 import { CommonModule } from '@angular/common';
 import { UpcomingService } from '../services/upcoming.service';
 import { of, switchMap } from 'rxjs';

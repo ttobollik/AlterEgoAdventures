@@ -35,7 +35,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Upcoming Expeditions
+            Up Next
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
             <li *ngFor="let item of upcomingData.records">
@@ -48,17 +48,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/about-us">About Us</a>
         </li>
-        <li class="nav-item dropdown" ngbDropdown>
-          <a
-            class="nav-link dropdown-toggle"
-            ngbDropdownToggle
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Gallery
-          </a>
-          <ul class="dropdown-menu" ngbDropdownMenu>
+        <li class="nav-item" ngbDropdown>
+          <a class="nav-link" href="./gallery"> Gallery </a>
+          <!-- <ul class="dropdown-menu" ngbDropdownMenu>
             <li><a class="dropdown-item" href="./gallery/1">G - Action</a></li>
             <li>
               <a class="dropdown-item" href="./gallery/1">G - Another action</a>
@@ -68,7 +60,7 @@
                 >G - Something else here</a
               >
             </li>
-          </ul>
+          </ul> -->
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./faq">FAQ</a>
@@ -96,7 +88,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Upcoming Expeditions
+            Up Next
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu>
             <li *ngFor="let item of upcomingData">
@@ -109,17 +101,9 @@
         <li class="nav-item">
           <a class="nav-link" href="./about-us">About Us</a>
         </li>
-        <li class="nav-item dropdown" ngbDropdown>
-          <a
-            class="nav-link dropdown-toggle"
-            ngbDropdownToggle
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Gallery
-          </a>
-          <ul class="dropdown-menu" ngbDropdownMenu>
+        <li class="nav-item" ngbDropdown>
+          <a class="nav-link" href="./gallery"> Gallery </a>
+          <!--  <ul class="dropdown-menu" ngbDropdownMenu>
             <li><a class="dropdown-item" href="./gallery/1">Action</a></li>
             <li>
               <a class="dropdown-item" href="./gallery/1">Another action</a>
@@ -129,7 +113,7 @@
                 >Something else here</a
               >
             </li>
-          </ul>
+          </ul> -->
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./faq">FAQ</a>
@@ -139,6 +123,8 @@
         </li>
       </ul>
     </div>
-      <a class="btn btn-primary" href="#">Sign Up</a>
+    <span>
+      <div class="btn btn-primary" (click)="openModal()">Sign Up</div></span
+    >
   </div>
 </nav>

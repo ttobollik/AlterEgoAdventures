@@ -35,6 +35,11 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: $primary-color-subdued;
-  border-color: $primary-color-subdued;
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
+.btn:disabled {
+  background-color: $subdued;
+  border-color: $subdued;
 }

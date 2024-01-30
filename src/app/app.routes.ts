@@ -24,7 +24,7 @@ export const routes: Routes = [
     component: AboutUsComponent,
   },
   {
-    path: 'gallery/:id',
+    path: 'gallery',
     component: GalleryComponent,
   },
   {

@@ -6,6 +6,7 @@ import { FaqComponent } from './faq/faq.component';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { ExpeditionPreviewComponent } from './expeditionPreview/expedition-preview.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgbAccordionModule,
     FaqComponent,
     HttpClientModule,
+    FormsModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

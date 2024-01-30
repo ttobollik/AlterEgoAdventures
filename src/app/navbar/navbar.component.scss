@@ -9,28 +9,28 @@
     display: none !important;
   }
   .navbarNavDesktop {
-    display: flex; /* Enable flexbox */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically (if needed) */
-    width: 100%; /* Ensure the container takes full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
   .navbarNavDesktop .navbar-nav {
-    display: flex; /* Enable flexbox for the nav list */
-    justify-content: center; /* Center items horizontally */
-    width: 100%; /* Ensure the nav list takes full width */
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .navbarNavDesktop .nav-item {
-    margin-right: 20px; /* Spacing between items */
+    margin-right: 20px;
   }
 
   .navbarNavDesktop .nav-item:last-child {
-    margin-right: 20px; /* Remove margin for the last item */
+    margin-right: 20px;
   }
 }
 .logo {
-  width: 70px;
+  width: 60px;
   height: auto;
 
   @media (min-width: 992px) {
@@ -38,3 +38,17 @@
   }
 }
 
+.navbarNavDesktop .btn-primary {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 100px;
+  padding: 10px 15px;
+  margin-left: 20px;
+}
+
+.btn-primary {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
