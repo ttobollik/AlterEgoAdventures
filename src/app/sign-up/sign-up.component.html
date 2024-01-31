@@ -21,7 +21,7 @@
         required
       />
       <div
-      class="invalid"
+        class="invalid"
         *ngIf="
           signUpForm.get('firstName')?.invalid &&
           signUpForm.get('firstName')?.touched
@@ -54,7 +54,10 @@
     <div class="form-group">
       <label for="trip">Select Trip*</label>
       <select class="form-control" id="trip" formControlName="tripId" required>
-        <option *ngFor="let trip of upcomingData$ | async" [value]="trip.id">
+        <option
+          *ngFor="let trip of upcomingData$ | async"
+          [value]="trip.fields.title"
+        >
           {{ trip.fields.title }}
         </option>
       </select>

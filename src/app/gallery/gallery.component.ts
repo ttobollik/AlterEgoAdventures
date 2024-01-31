@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
-import { FaqService } from '../services/faq.service';
+import { GalleryService } from '../services/gallery.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  providers: [FaqService],
+  providers: [GalleryService],
   imports: [NgbAccordionModule, HttpClientModule, CommonModule],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss',
 })
-export class GalleryComponent implements OnInit {
+export class GalleryComponent {
   images = [
     { src: 'https://picsum.photos/300/200', alt: 'test' },
     { src: 'https://picsum.photos/300/600', alt: 'test' },
@@ -23,5 +24,7 @@ export class GalleryComponent implements OnInit {
     { src: 'https://picsum.photos/300/100', alt: 'test' },
     { src: 'https://picsum.photos/300/600', alt: 'test' },
   ];
-  ngOnInit(): void {}
+  images$: Observable<any> = this.galleryService.getUpcomingData();
+
+  constructor(private galleryService: GalleryService) {}
 }
