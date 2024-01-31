@@ -18,7 +18,7 @@
         <h1 class="m-4">{{ item?.fields?.title }}</h1>
         <p class="lead description">{{ item?.fields?.short_description }}</p>
         <h2 class="m-2">
-          {{ item?.fields?.start_date }} to {{ item?.fields?.end_date }}
+          {{ item?.fields?.start_date | date:'dd.MM.yy':'UTC'  }} to {{ item?.fields?.end_date | date:'dd.MM.yy':'UTC' }}
         </h2>
       </div>
     </div>
