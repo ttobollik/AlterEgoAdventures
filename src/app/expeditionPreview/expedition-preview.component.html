@@ -15,11 +15,11 @@
             [src]="item.fields.main_picture"
           />
         </a>
-        <h2 class="m-4">{{ item?.fields?.title }}</h2>
-        <p class="lead">{{ item?.fields?.description }}</p>
-        <p class="lead">
+        <h1 class="m-4">{{ item?.fields?.title }}</h1>
+        <p class="lead description">{{ item?.fields?.short_description }}</p>
+        <h2 class="m-2">
           {{ item?.fields?.start_date }} to {{ item?.fields?.end_date }}
-        </p>
+        </h2>
       </div>
     </div>
   </div>

@@ -1,13 +1,11 @@
 @media (max-width: 900px) {
   .container-fluid {
-    margin: 5px !important; /* Adjust the margin as needed for mobile view */
+    margin: 5px !important;
   }
 
   .row {
-    padding: 5px !important; /* Adjust padding if needed */
+    padding: 5px !important;
   }
-
-  /* Any other mobile-specific styles */
 }
 
 .container-fluid {
@@ -16,4 +14,14 @@
 
 img {
   max-height: 500px;
+}
+
+.description {
+  width: 100%;
+  margin: 1rem auto;
+
+  @media (min-width: 900px) {
+    width: 60%;
+    margin: 0rem auto;
+  }
 }

@@ -9,6 +9,7 @@ export interface Record {
 }
 
 export interface Expedition {
+  short_description: string;
   long_description: string;
   description: string;
   end_date: Date;
