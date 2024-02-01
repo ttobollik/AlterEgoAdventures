@@ -48,7 +48,7 @@ export class SignUpComponent {
   removePlaceholderStyle(event: Event) {
     const selectElement = event.target as HTMLSelectElement;
     if (selectElement.value != '') {
-      selectElement.classList.remove('placeholderx');
+      selectElement.classList.remove('placeholder_select');
     }
   }
 
