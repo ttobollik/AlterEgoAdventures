@@ -45,13 +45,6 @@ export class SignUpComponent {
     }
   }
 
-  removePlaceholderStyle(event: Event) {
-    const selectElement = event.target as HTMLSelectElement;
-    if (selectElement.value != '') {
-      selectElement.classList.remove('placeholder_select');
-    }
-  }
-
   upcomingData$: Observable<any> = this.upcomingService.getUpcomingData();
 
   dismiss() {
