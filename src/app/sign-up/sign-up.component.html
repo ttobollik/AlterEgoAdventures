@@ -55,12 +55,9 @@
 
     <div class="form-group">
       <label for="trip">Select Trip*</label>
-      <select class="form-control" id="trip" formControlName="tripId" required>
+      <select class="form-control placeholderx" id="trip" formControlName="tripId" required (change)="removePlaceholderStyle($event)">
         <option value="" disabled selected>Select a trip...</option>
-        <option
-          *ngFor="let trip of upcomingData$ | async"
-          [value]="trip.fields.title"
-        >
+        <option *ngFor="let trip of upcomingData$ | async" [value]="trip.fields.title">
           {{ trip.fields.title }}
         </option>
       </select>
