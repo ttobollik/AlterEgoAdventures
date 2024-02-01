@@ -6,6 +6,10 @@
 
 .modal-body {
   font-size: smaller;
+  .form-control::placeholder {
+    font-size: smaller;
+    color: $subdued;
+  }
 }
 label {
   padding-bottom: 0.2rem;
