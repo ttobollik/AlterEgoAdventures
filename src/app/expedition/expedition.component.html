@@ -4,7 +4,7 @@
     <h2>
       {{ expedition.fields.start_date | date:'dd.MM.yy':'UTC' }} - {{ expedition.fields.end_date | date:'dd.MM.yy':'UTC' }}
     </h2>
-    <p class="description">
+    <p class="description px-4">
       {{ expedition.fields.description }}
     </p>
 
@@ -43,24 +43,24 @@
       </ng-template>
     </ngb-carousel>
 
-    <p class="description">{{ expedition.fields.long_description }} test</p>
+    <p class="description px-4">{{ expedition.fields.long_description }} test</p>
 
-    <span class="pricing">
-      <div class="package">
+    <span class="pricing px-3">
+      <div class="package mb-3">
         <h2>Bronze</h2>
         <h3>{{ expedition.fields.price_bronze }}</h3>
         <p>
           {{ expedition.fields.bronze_description }}
         </p>
       </div>
-      <div class="package">
+      <div class="package mb-3">
         <h2>Silver</h2>
         <h3>{{ expedition.fields.price_silver }}</h3>
         <p>
           {{ expedition.fields.silver_description }}
         </p>
       </div>
-      <div class="package">
+      <div class="package mb-3">
         <h2>Gold</h2>
         <h3>{{ expedition.fields.price_gold }}</h3>
         <p>

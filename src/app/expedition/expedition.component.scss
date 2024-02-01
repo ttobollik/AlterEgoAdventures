@@ -20,12 +20,16 @@
 
 // Carousel specific styles
 ngb-carousel {
-  width: calc(100% + 20rem); // Adding 20rem to compensate for the body's margin
-  margin: 0 -10rem; // Negative margin to pull the carousel to screen edges
+  width: 100%; // Set the width to 100% of the parent container
+  margin: 0; // Remove the negative margin
   padding: 0;
+  @media (min-width: 900px) {
+    width: calc(100% + 20rem); // Increase the width to 75% of the parent container
+    margin: 0 -10rem; // Center the carousel
 
-  .picsum-img-wrapper img {
-    width: 100%; // Ensure images take full width
+    .picsum-img-wrapper img {
+      width: 100%; // Ensure images take full width
+    }
   }
 }
 
