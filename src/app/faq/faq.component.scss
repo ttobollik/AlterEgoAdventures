@@ -1,0 +1,9 @@
+.description {
+  width: 100%;
+  margin: 1rem auto;
+
+  @media (min-width: 900px) {
+    width: 60%;
+    margin: 0rem auto;
+  }
+}

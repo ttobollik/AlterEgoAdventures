@@ -24,4 +24,6 @@ export interface Expedition {
   bronze_description: string;
   silver_description: string;
   gold_description: string;
+  additional_pictures: string;
+
 }

@@ -1,8 +1,21 @@
 <h1 class="text-center fw-bold mt-3">Frequently Asked Questions(FAQ)</h1>
+<div class="description">
+  Exotic skydiving events are jumping in temporary set up drop zones that
+  normally are exceedingly difficult to operate, the use of professional team
+  members is required and some locations extremely expensive permits for air
+  delivery operations. Like most exotic locations an aircraft must be brought to
+  that destination specifically exceeding the normal drop zone operation costs.
+  We at Alter Ego Adventures do our best to make costs as reasonable as possible
+  without sacrificing safety and quality for our participants. We understand
+  there may be other exotic holidays but with us you will be guaranteed safety
+  by the most experienced professionals in the world.
+</div>
 <div class="m-3" ngbAccordion>
   <div ngbAccordionItem *ngFor="let item of faqData.records">
     <h2 ngbAccordionHeader>
-      <button class="fw-bold" ngbAccordionButton>{{ item.fields["faq-questions"] }}</button>
+      <button class="fw-bold" ngbAccordionButton>
+        {{ item.fields["faq-questions"] }}
+      </button>
     </h2>
     <div ngbAccordionCollapse>
       <div ngbAccordionBody>

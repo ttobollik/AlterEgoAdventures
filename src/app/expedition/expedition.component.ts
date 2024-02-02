@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import {
   NgbAccordionModule,
   NgbCarouselModule,
@@ -28,7 +28,9 @@ export class ExpeditionComponent {
     private upcomingService: UpcomingService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+
+  }
 
   expedition$ = this.route.paramMap.pipe(
     switchMap((params) => {
@@ -41,4 +43,15 @@ export class ExpeditionComponent {
     })
   );
 
+  pictures$ = this.expedition$.pipe(
+    switchMap((expedition) => {
+      if (expedition && expedition.fields.additional_pictures) {
+        return this.upcomingService.loadUpcomingPictures(
+          expedition.fields.additional_pictures
+        );
+      } else {
+        return of(null); // TODO add some fallback picture
+      }
+    })
+  );
 }
