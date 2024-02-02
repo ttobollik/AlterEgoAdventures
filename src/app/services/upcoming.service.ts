@@ -16,6 +16,7 @@ export class UpcomingService {
   public upcomingData$: Observable<any[]> =
     this.upcomingDataSubject.asObservable();
 
+
   constructor(private http: HttpClient) {
     this.loadUpcomingData();
   }
@@ -35,6 +36,16 @@ export class UpcomingService {
       .subscribe();
   }
 
+  public loadUpcomingPictures(id: string) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token}`,
+    });
+
+    return this.http.get<Data>(environment.apiUrl + id, { headers }).pipe(
+      map(data => data['records']) 
+    );
+  }
+
   getUpcomingData(): Observable<any[]> {
     return this.upcomingData$;
   }
@@ -44,4 +55,6 @@ export class UpcomingService {
       map((dataArray) => dataArray.find((item) => item.id === id))
     );
   }
+
+ 
 }

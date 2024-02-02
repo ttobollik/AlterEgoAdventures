@@ -2,43 +2,17 @@
   <div class="main-layout">
     <h1>{{ expedition.fields.title }}</h1>
     <h2>
-      {{ expedition.fields.start_date | date:'dd.MM.yy':'UTC' }} - {{ expedition.fields.end_date | date:'dd.MM.yy':'UTC' }}
+      {{ expedition.fields.start_date | date : "dd.MM.yy" : "UTC" }} -
+      {{ expedition.fields.end_date | date : "dd.MM.yy" : "UTC" }}
     </h2>
     <p class="description">
       {{ expedition.fields.description }}
     </p>
 
     <ngb-carousel>
-      <ng-template ngbSlide>
+      <ng-template ngbSlide *ngFor="let picture of pictures$ | async">
         <div class="picsum-img-wrapper">
-          <img
-            [src]="'https://picsum.photos/1000/200'"
-            alt="Random first slide"
-          />
-        </div>
-        <div class="carousel-caption">
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img [src]="'https://picsum.photos/1000/200'" />
-        </div>
-        <div class="carousel-caption">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img
-            [src]="'https://picsum.photos/1000/200'"
-            alt="Random third slide"
-          />
-        </div>
-        <div class="carousel-caption">
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <img [src]="picture.fields.src" alt="Random first slide" />
         </div>
       </ng-template>
     </ngb-carousel>
