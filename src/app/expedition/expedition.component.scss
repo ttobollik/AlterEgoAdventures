@@ -8,11 +8,23 @@
 
 .package {
   border-radius: 5px;
-  border: 1px solid $subdued;
+  //border: 1px solid $subdued;
   padding: 1rem;
   margin: 0rem 1rem;
   flex-basis: 100%;
+  color: white;
 
+  &.bronze {
+    background-color: #c5712d;
+  }
+
+  &.silver {
+    background-color: #3a949d;
+  }
+
+  &.gold {
+    background-color: #f4b545;
+  }
   @media (min-width: 900px) {
     flex-basis: calc(33.333% - 2rem);
   }
@@ -53,4 +65,7 @@ p {
     width: 60%;
     margin: 0rem auto;
   }
+}
+ul {
+  list-style-type: none;
 }

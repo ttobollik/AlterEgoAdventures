@@ -28,7 +28,9 @@ export class ExpeditionComponent {
     private upcomingService: UpcomingService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+
+  }
 
   expedition$ = this.route.paramMap.pipe(
     switchMap((params) => {
