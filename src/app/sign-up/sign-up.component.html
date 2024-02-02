@@ -19,6 +19,7 @@
         id="firstName"
         formControlName="firstName"
         required
+        placeholder="Enter your first name..."
       />
       <div
         class="invalid"
@@ -39,6 +40,7 @@
         id="lastName"
         formControlName="lastName"
         required
+        placeholder="Enter your last name..."
       />
       <div
         *ngIf="
@@ -53,11 +55,9 @@
 
     <div class="form-group">
       <label for="trip">Select Trip*</label>
-      <select class="form-control" id="trip" formControlName="tripId" required>
-        <option
-          *ngFor="let trip of upcomingData$ | async"
-          [value]="trip.fields.title"
-        >
+      <select class="form-control" id="trip" formControlName="tripId" required [ngClass]="{'placeholder_select': (signUpForm.get('tripId')?.value == '')}">
+        <option value="" disabled selected>Select a trip...</option>
+        <option *ngFor="let trip of upcomingData$ | async" [value]="trip.fields.title">
           {{ trip.fields.title }}
         </option>
       </select>
@@ -79,6 +79,7 @@
         id="email"
         formControlName="email"
         required
+        placeholder="Enter your email..."
       />
       <div
         *ngIf="
@@ -97,6 +98,7 @@
         class="form-control"
         id="phone"
         formControlName="phone"
+        placeholder="Enter your phone number..."
       />
       <!-- You can add validation message for phone here if needed -->
     </div>
@@ -107,6 +109,7 @@
         class="form-control"
         id="comments"
         formControlName="comments"
+        placeholder="Enter any comments here..."
       ></textarea>
     </div>
 
