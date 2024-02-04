@@ -12,6 +12,77 @@
 <div class="modal-body">
   <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
+      <label for="trip">Select Trip*</label>
+      <select
+        class="form-control"
+        id="trip"
+        formControlName="tripId"
+        required
+        [ngClass]="{
+          placeholder_select: signUpForm.get('tripId')?.value == ''
+        }"
+      >
+        <option value="" disabled selected>Select a trip...</option>
+        <option
+          *ngFor="let trip of upcomingData$ | async"
+          [value]="trip.fields.title"
+        >
+          {{ trip.fields.title }}
+        </option>
+      </select>
+      <div
+        *ngIf="
+          signUpForm.get('tripId')!.invalid && signUpForm.get('tripId')!.touched
+        "
+        class="invalid"
+      >
+        Please select a trip.
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Package (Number of jumps)*</label>
+      <div class="radio-buttons-container">
+        <div *ngFor="let package of packages; let i = index" class="form-check">
+          <input
+            type="radio"
+            [id]="package + 'Package'"
+            name="package"
+            formControlName="package"
+            class="form-check-input"
+            [value]="package"
+            required
+          />
+          <label [for]="package + 'Package'" class="form-check-label">{{
+            package | titlecase
+          }}</label>
+        </div>
+      </div>
+      <div
+        *ngIf="
+          signUpForm.get('package')?.invalid &&
+          signUpForm.get('package')?.touched
+        "
+        class="invalid"
+      >
+        Please select a package.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Skydive Discipline Interests</label>
+      <input
+        type="text"
+        class="form-control"
+        id="discipline"
+        formControlName="discipline"
+        required
+        placeholder="Enter all disciplines you are interested in..."
+      />
+    </div>
+
+    <hr />
+
+    <div class="form-group">
       <label for="firstName">First Name*</label>
       <input
         type="text"
@@ -54,24 +125,6 @@
     </div>
 
     <div class="form-group">
-      <label for="trip">Select Trip*</label>
-      <select class="form-control" id="trip" formControlName="tripId" required [ngClass]="{'placeholder_select': (signUpForm.get('tripId')?.value == '')}">
-        <option value="" disabled selected>Select a trip...</option>
-        <option *ngFor="let trip of upcomingData$ | async" [value]="trip.fields.title">
-          {{ trip.fields.title }}
-        </option>
-      </select>
-      <div
-        *ngIf="
-          signUpForm.get('tripId')!.invalid && signUpForm.get('tripId')!.touched
-        "
-        class="invalid"
-      >
-        Please select a trip.
-      </div>
-    </div>
-
-    <div class="form-group">
       <label for="email">Email*</label>
       <input
         type="email"
@@ -100,7 +153,6 @@
         formControlName="phone"
         placeholder="Enter your phone number..."
       />
-      <!-- You can add validation message for phone here if needed -->
     </div>
 
     <div class="form-group">

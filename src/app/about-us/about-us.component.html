@@ -1,5 +1,5 @@
 <div class="main-layout">
-  <h1>Who we are</h1>
+  <h1 class="ethnocentric">Who we are</h1>
   <p class="description">
     At Alter Ego Adventures, we take pride in our attention to detail and
     commitment to providing the best adventure for you! Our travel experts have
@@ -12,7 +12,7 @@
   <div *ngFor="let person of tmp" class="profile-card">
     <img [src]="person.img" class="profile-picture" />
     <div>
-      <h2>{{ person.name }}</h2>
+      <h2 class="ethnocentric">{{ person.name }}</h2>
       <p>{{ person.description }}</p>
     </div>
   </div>

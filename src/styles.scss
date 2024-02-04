@@ -29,6 +29,13 @@ body {
   }
 }
 
+@font-face {
+  font-family: "Ethnocentric";
+  src: url("./assets/fonts/Ethnocentric.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .btn-primary {
   background-color: $primary-color;
   border-color: $primary-color;

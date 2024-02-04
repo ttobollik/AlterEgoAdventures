@@ -2,11 +2,11 @@
   <div class="container-fluid hero-container bg-light">
     <div class="row align-items-center px-5 pb-5">
       <div class="row-lg-6 text-center">
-        <h1 class="m-4">Upcoming Expeditions</h1>
+        <h1 class="m-4 ethnocentric">Upcoming Expeditions</h1>
       </div>
       <div
         *ngFor="let item of upcomingData"
-        class="row-lg-6 text-center border p-5 mb-2"
+        class="row-lg-6 text-center border p-5 mb-2 opacity"
       >
         <a href="./expedition/{{ item.id }}">
           <img
@@ -15,10 +15,11 @@
             [src]="item.fields.main_picture"
           />
         </a>
-        <h1 class="m-4">{{ item?.fields?.title }}</h1>
+        <h3 class="m-4 ethnocentric">{{ item?.fields?.title }}</h3>
         <p class="lead description">{{ item?.fields?.short_description }}</p>
         <h2 class="m-2">
-          {{ item?.fields?.start_date | date:'dd.MM.yy':'UTC'  }} to {{ item?.fields?.end_date | date:'dd.MM.yy':'UTC' }}
+          {{ item?.fields?.start_date | date : "dd.MM.yy" : "UTC" }} to
+          {{ item?.fields?.end_date | date : "dd.MM.yy" : "UTC" }}
         </h2>
       </div>
     </div>
