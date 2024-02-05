@@ -1,6 +1,6 @@
 <ng-container *ngIf="expedition$ | async as expedition">
   <div class="main-layout">
-    <h1>{{ expedition.fields.title }}</h1>
+    <h1 class="ethnocentric">{{ expedition.fields.title }}</h1>
     <h2>
       {{ expedition.fields.start_date | date : "dd.MM.yy" : "UTC" }} -
       {{ expedition.fields.end_date | date : "dd.MM.yy" : "UTC" }}
@@ -17,7 +17,9 @@
       </ng-template>
     </ngb-carousel>
 
-    <p class="description px-4">{{ expedition.fields.long_description }} test</p>
+    <p class="description px-4">
+      {{ expedition.fields.long_description }} test
+    </p>
 
     <span class="pricing px-3">
       <div class="package bronze mb-3">

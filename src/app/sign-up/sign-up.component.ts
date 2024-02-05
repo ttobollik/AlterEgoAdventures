@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class SignUpComponent {
   signUpForm: FormGroup;
+  packages = ['bronze (5)', 'silver (10)', 'gold (15)'];
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -31,6 +32,8 @@ export class SignUpComponent {
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
       tripId: new FormControl('', Validators.required),
+      package: new FormControl('', Validators.required),
+      discipline: new FormControl(''),
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl(''), // Validators for phone number required
       comments: new FormControl(''),
