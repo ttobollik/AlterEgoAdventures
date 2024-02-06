@@ -30,18 +30,30 @@
   }
 }
 
-// Carousel specific styles
 ngb-carousel {
-  width: 100%; // Set the width to 100% of the parent container
-  margin: 0; // Remove the negative margin
-  padding: 0;
-  @media (min-width: 900px) {
-    width: calc(100% + 20rem); // Increase the width to 75% of the parent container
-    margin: 0 -10rem; // Center the carousel
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  .carousel-inner,
+  .carousel-item {
+    height: 100%;
+  }
+  @media (max-width: 772px) {
+    height: 30vh;
+  }
+}
 
-    .picsum-img-wrapper img {
-      width: 100%; // Ensure images take full width
-    }
+.picsum-img-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center !important;
   }
 }
 
