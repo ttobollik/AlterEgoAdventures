@@ -1,13 +1,15 @@
 <ng-container *ngIf="expedition$ | async as expedition">
-  <div class="main-layout">
-    <h1 class="ethnocentric">{{ expedition.fields.title }}</h1>
-    <h2>
-      {{ expedition.fields.start_date | date : "dd.MM.yy" : "UTC" }} -
-      {{ expedition.fields.end_date | date : "dd.MM.yy" : "UTC" }}
-    </h2>
-    <p class="description px-4">
-      {{ expedition.fields.description }}
-    </p>
+  <div>
+    <div class="main-layout">
+      <h1 class="ethnocentric">{{ expedition.fields.title }}</h1>
+      <h2>
+        {{ expedition.fields.start_date | date : "dd.MM.yy" : "UTC" }} -
+        {{ expedition.fields.end_date | date : "dd.MM.yy" : "UTC" }}
+      </h2>
+      <p class="description px-4">
+        {{ expedition.fields.description }}
+      </p>
+    </div>
 
     <ngb-carousel>
       <ng-template ngbSlide *ngFor="let picture of pictures$ | async">
@@ -17,54 +19,56 @@
       </ng-template>
     </ngb-carousel>
 
-    <p class="description px-4">
-      {{ expedition.fields.long_description }} test
-    </p>
-
-    <span class="pricing px-3">
-      <div class="package bronze mb-3">
-        <h2>Bronze</h2>
-        <h2>{{ expedition.fields.price_bronze }} USD*</h2>
-        <p>
-          {{ expedition.fields.bronze_description }}
-        </p>
-      </div>
-      <div class="package silver mb-3">
-        <h2>Silver</h2>
-        <h2>{{ expedition.fields.price_silver }} USD*</h2>
-        <p>
-          {{ expedition.fields.silver_description }}
-        </p>
-      </div>
-      <div class="package gold mb-3">
-        <h2>Gold</h2>
-        <h2>{{ expedition.fields.price_gold }} USD*</h2>
-        <p>
-          {{ expedition.fields.gold_description }}
-        </p>
-      </div>
-    </span>
-
-    <div>
-      <p>*Accomodation not included</p>
-      <p class="px-3">Extra jumps can be purchased for 50 USD a jump</p>
-      <p>Tandem jumps are available</p>
-
-      <h2>All jump packages include:</h2>
-      <ul class="list-group">
-        <li>5-1 Load Organizing PAC 750 XL Daily</li>
-        <li>transport</li>
-        <li>INHOPPS</li>
-        <li>Partial meals on jumping days</li>
-        <li>Safety USPA ST&As</li>
-        <li>Merchandise *Jersey, T shirt</li>
-      </ul>
-
-      <p class="px-3">
-        There are various accommodation options available, and they can be
-        arranged for ALL – Inclusive to budget accomodation. Please contact us
-        for specific pricing.
+    <div class="main-layout">
+      <p class="description px-4">
+        {{ expedition.fields.long_description }} test
       </p>
+
+      <span class="pricing px-3">
+        <div class="package bronze mb-3">
+          <h2>Bronze</h2>
+          <h2>{{ expedition.fields.price_bronze }} USD*</h2>
+          <p>
+            {{ expedition.fields.bronze_description }}
+          </p>
+        </div>
+        <div class="package silver mb-3">
+          <h2>Silver</h2>
+          <h2>{{ expedition.fields.price_silver }} USD*</h2>
+          <p>
+            {{ expedition.fields.silver_description }}
+          </p>
+        </div>
+        <div class="package gold mb-3">
+          <h2>Gold</h2>
+          <h2>{{ expedition.fields.price_gold }} USD*</h2>
+          <p>
+            {{ expedition.fields.gold_description }}
+          </p>
+        </div>
+      </span>
+
+      <div>
+        <p>*Accomodation not included</p>
+        <p class="px-3">Extra jumps can be purchased for 50 USD a jump</p>
+        <p>Tandem jumps are available</p>
+
+        <h2>All jump packages include:</h2>
+        <ul class="list-group">
+          <li>5-1 Load Organizing PAC 750 XL Daily</li>
+          <li>transport</li>
+          <li>INHOPPS</li>
+          <li>Partial meals on jumping days</li>
+          <li>Safety USPA ST&As</li>
+          <li>Merchandise *Jersey, T shirt</li>
+        </ul>
+
+        <p class="px-3">
+          There are various accommodation options available, and they can be
+          arranged for ALL – Inclusive to budget accomodation. Please contact us
+          for specific pricing.
+        </p>
+      </div>
     </div>
   </div>
 </ng-container>
