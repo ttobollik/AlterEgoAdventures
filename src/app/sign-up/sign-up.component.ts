@@ -11,12 +11,13 @@ import { CommonModule } from '@angular/common';
 import { UpcomingService } from '../services/upcoming.service';
 import { Observable } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
+import { EmailService } from '../services/sendEmail.service';
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
   templateUrl: './sign-up.component.html',
-  providers: [UpcomingService],
+  providers: [UpcomingService, EmailService],
   imports: [FormsModule, ReactiveFormsModule, CommonModule, HttpClientModule],
   styleUrl: './sign-up.component.scss',
 })
@@ -26,7 +27,8 @@ export class SignUpComponent {
 
   constructor(
     public activeModal: NgbActiveModal,
-    private upcomingService: UpcomingService
+    private upcomingService: UpcomingService,
+    private emailService: EmailService
   ) {
     this.signUpForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
@@ -42,8 +44,18 @@ export class SignUpComponent {
 
   onSubmit() {
     if (this.signUpForm.valid) {
-      console.log(this.signUpForm.value);
-      // Handle form submission, like sending data to server
+      const formValues = {
+        firstName: this.signUpForm.value.firstName,
+        lastName: this.signUpForm.value.lastName,
+        tripId: this.signUpForm.value.tripId,
+        package: this.signUpForm.value.package,
+        discipline: this.signUpForm.value.discipline,
+        email: this.signUpForm.value.email,
+        phone: this.signUpForm.value.phone,
+        comments: this.signUpForm.value.comments,
+      };
+
+      this.emailService.sendEmail(formValues).subscribe();
       this.activeModal.close();
     }
   }
