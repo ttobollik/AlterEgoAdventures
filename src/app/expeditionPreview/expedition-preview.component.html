@@ -18,8 +18,12 @@
         <h3 class="m-4 ethnocentric">{{ item?.fields?.title }}</h3>
         <p class="lead description">{{ item?.fields?.short_description }}</p>
         <h2 class="m-2">
-          {{ item?.fields?.start_date | date : "dd.MM.yy" : "UTC" }} to
-          {{ item?.fields?.end_date | date : "dd.MM.yy" : "UTC" }}
+          {{
+            getDateRangeDisplay(
+              item?.fields?.start_date,
+              item?.fields?.end_date
+            )
+          }}
         </h2>
       </div>
     </div>

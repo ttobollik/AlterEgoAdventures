@@ -3,8 +3,12 @@
     <div class="main-layout">
       <h1 class="ethnocentric">{{ expedition.fields.title }}</h1>
       <h2>
-        {{ expedition.fields.start_date | date : "dd.MM.yy" : "UTC" }} -
-        {{ expedition.fields.end_date | date : "dd.MM.yy" : "UTC" }}
+        {{
+          getDateRangeDisplay(
+            expedition.fields.start_date,
+            expedition.fields.end_date
+          )
+        }}
       </h2>
       <p class="description px-4">
         {{ expedition.fields.description }}

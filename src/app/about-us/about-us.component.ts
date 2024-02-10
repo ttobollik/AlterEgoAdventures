@@ -24,13 +24,13 @@ export class AboutUsComponent implements OnInit {
       name: 'Jeannie Bartholomew',
       description:
         'Jeannie Bartholomew has over 10,500 jumps and 18 years in the sport. She is a full time canopy coach and pro canopy piloting competitor on Team Alter Ego Fastrax. She’s an accomplished competitor currently ranked 2nd in the USA in freestyle and the top female freestyle canopy pilot in the world. She also holds 21 records in CP. She co owns the Alter Ego Project canopy piloting school, the United States Canopy Piloting Association which is a National CP competition circuit in addition to Alter Ego Adventures. She is a USPA National Director, AFFI and has also has her Pro rating. Curt and Jeannie have been traveling the world since 2010 and have been to over 60 countries for skydiving events, competition and vacation. She’s experienced the world from above as well as immersing herself in the local culture of every country she’s visited. She is excited to share her love, passion and experience traveling the world with all of the Alter Ego Adventure travelers!',
-      img: 'assets/img/tim.png',
+      img: 'assets/img/jeannie.jpeg',
     },
     {
       name: 'Curt Bartholomew',
       description:
         'Curt Bartholomew has over 12,500 jumps and 18 years in the sport. He is a full time canopy coach and pro canopy piloting competitor on Team Alter Ego Fastrax. Curt is the current World Champion in CP and CP Freestyle and an 8x World Champion and 10x National Champion. He co owns the Alter Ego Project canopy piloting school, the United States Canopy Piloting Association which is a National CP competition circuit in addition to Alter Ego Adventures with his wife Jeannie. Be has a degree in aeronautics with a several minors; airport management and air traffic control. He is an AFFI and has also his Pro rating. Curt and Jeannie have been traveling the world since 2010 and have been to over 60 countries for skydiving events, competition and vacation. He is excited to share his vast knowledge of skydiving, travel and special projects with all of the Alter Ego Adventure travelers!',
-      img: 'assets/img/tim.png',
+      img: 'assets/img/curt.jpeg',
     },
   ];
   ngOnInit(): void {}
