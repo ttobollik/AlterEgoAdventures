@@ -10,6 +10,7 @@ import { of, switchMap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { ParagraphPipe } from '../pipes/paragraph.pipe';
 
 @Component({
   selector: 'app-expedition',
@@ -20,6 +21,7 @@ import { DatePipe } from '@angular/common';
     CommonModule,
     NgbCarouselModule,
     HttpClientModule,
+    ParagraphPipe,
   ],
   templateUrl: './expedition.component.html',
   styleUrl: './expedition.component.scss',
@@ -31,6 +33,16 @@ export class ExpeditionComponent {
     private router: Router,
     private datePipe: DatePipe
   ) {}
+
+  included = [
+    '5-1 Load Organizing',
+    'PAC 750 XL',
+    'Daily transport',
+    'INHOPPS',
+    'Partial meals on jumping days',
+    'Safety USPA ST&As',
+    'Merchandise *Jersey, T shirt',
+  ];
 
   expedition$ = this.route.paramMap.pipe(
     switchMap((params) => {

@@ -10,9 +10,11 @@
           )
         }}
       </h2>
-      <p class="description px-4">
-        {{ expedition.fields.description }}
-      </p>
+
+      <div
+        class="description px-4"
+        [innerHTML]="expedition.fields.description | paragraph"
+      ></div>
     </div>
 
     <ngb-carousel>
@@ -24,9 +26,7 @@
     </ngb-carousel>
 
     <div class="main-layout">
-      <p class="description px-4">
-        {{ expedition.fields.long_description }} test
-      </p>
+      <p class="py-4">{{ expedition.fields.long_description }} test</p>
 
       <span class="pricing px-3">
         <div class="package bronze mb-3">
@@ -53,19 +53,24 @@
       </span>
 
       <div>
-        <p>*Accomodation not included</p>
+        <p>
+          *Accomodation not included <br />
+          except for Nosy-Be, Madagascar there will be accommodation available
+          from budget to 5 star luxury for you to choose from
+        </p>
         <p class="px-3">Extra jumps can be purchased for 50 USD a jump</p>
         <p>Tandem jumps are available</p>
 
         <h2>All jump packages include:</h2>
-        <ul class="list-group">
-          <li>5-1 Load Organizing PAC 750 XL Daily</li>
-          <li>transport</li>
-          <li>INHOPPS</li>
-          <li>Partial meals on jumping days</li>
-          <li>Safety USPA ST&As</li>
-          <li>Merchandise *Jersey, T shirt</li>
-        </ul>
+        <div class="list-container">
+          <ul class="list">
+            <li *ngFor="let item of included">
+              <input type="checkbox" checked="checked" readonly disabled />
+              <span class="checkmark"></span>
+              {{ item }}
+            </li>
+          </ul>
+        </div>
 
         <p class="px-3">
           There are various accommodation options available, and they can be
