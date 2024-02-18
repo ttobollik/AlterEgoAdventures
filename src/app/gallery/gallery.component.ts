@@ -14,16 +14,7 @@ import { Observable } from 'rxjs';
   styleUrl: './gallery.component.scss',
 })
 export class GalleryComponent {
-  images = [
-    { src: 'https://picsum.photos/300/200', alt: 'test' },
-    { src: 'https://picsum.photos/300/600', alt: 'test' },
-    { src: 'https://picsum.photos/300/400', alt: 'test' },
-    { src: 'https://picsum.photos/300/500', alt: 'test' },
-    { src: 'https://picsum.photos/300/300', alt: 'test' },
-    { src: 'https://picsum.photos/300/200', alt: 'test' },
-    { src: 'https://picsum.photos/300/100', alt: 'test' },
-    { src: 'https://picsum.photos/300/600', alt: 'test' },
-  ];
+
   images$: Observable<any> = this.galleryService.getUpcomingData();
 
   constructor(private galleryService: GalleryService) {}

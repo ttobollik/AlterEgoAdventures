@@ -21,16 +21,15 @@ h1 {
 }
 
 .contacts > div {
-  flex: 1; /* Each child div takes up equal space */
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center; /* Center text */
-}
-
-.contacts img {
-  max-width: 40px;
-  margin-bottom: 1rem; /* Adjust spacing between image and text */
+  text-align: center;
+  .contacts img {
+    max-width: 40px;
+    margin-bottom: 1rem;
+  }
 }
 
 .contacts p {
@@ -38,16 +37,14 @@ h1 {
   font-size: smaller;
 }
 
-/* Media query for small screens */
 @media (max-width: 768px) {
-  /* or 768px, adjust as needed */
   .contacts {
-    flex-direction: column; /* Stack child divs vertically */
+    flex-direction: column;
   }
 
   .contacts > div {
-    width: 100%; /* Full width for each child div */
-    margin-bottom: 1rem; /* Add some space between the items */
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }
 

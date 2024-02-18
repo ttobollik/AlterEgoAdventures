@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="main-layout">
+    <h1>Client Testimonials</h1>
+    <p class="description px-3 mb-0">
+      At Alter Ego Adventures, we take pride in our attention to detail and
+      commitment to providing the best adventure for you! Our travel experts
+      have personally experienced the destinations we offer, ensuring that
+      you’ll receive insider tips and recommendations. We handle all the
+      logistics, including transportation (on some events) accommodation, and
+      activity bookings, so you can focus on enjoying your adventure to the
+      fullest. Don’t take it from us, read through our testimonials!
+    </p>
+    <div *ngIf="testimonials$ | async" class="testimonials-wrapper">
+      <div
+        *ngFor="let testimonial of (testimonials$ | async).records"
+        class="testimonial-container"
+      >
+        <div class="testimonial-text">
+          <p>
+            <span class="quote">"</span>{{ testimonial.fields.Quote
+            }}<span class="quote">"</span>
+          </p>
+        </div>
+        <span class="mx-5 author">
+          <img [src]="testimonial.fields.PictureUrl" class="profile-picture" />
+          <h2>{{ testimonial.fields.Author }}</h2>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

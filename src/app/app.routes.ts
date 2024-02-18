@@ -5,6 +5,7 @@ import { ExpeditionComponent } from './expedition/expedition.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ClientTestimonialsComponent } from './client-testimonials/client-testimonials.component';
 
 export const routes: Routes = [
   {
@@ -29,6 +30,14 @@ export const routes: Routes = [
   },
   {
     path: 'contact-us',
+    component: ContactUsComponent,
+  },
+  {
+    path: 'client-testimonials',
+    component: ClientTestimonialsComponent,
+  },
+  {
+    path: 'news',
     component: ContactUsComponent,
   },
 ];

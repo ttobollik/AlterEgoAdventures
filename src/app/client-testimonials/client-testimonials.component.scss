@@ -1,0 +1,96 @@
+.description {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+@media (min-width: 900px) {
+  .description {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+h1 {
+  padding-top: 1rem;
+  font-family: "Ethnocentric", sans-serif;
+}
+
+.container-fluid {
+  background-color: white !important;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    ),
+    url("../../assets/img/bgAboutUs.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-layout {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.testimonials-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; // Or use 'flex-start' for a tighter alignment.
+  gap: 20px; // Adjust as necessary for spacing between testimonials.
+  margin: 20px;
+}
+
+.testimonial-container {
+  background-color: white;
+  border-radius: 1rem;
+  flex: 1 1 calc(50% - 20px); // Adjust the subtraction value based on the gap.
+  max-width: calc(50% - 20px); // Prevents stretching beyond the desired width.
+
+  @media (max-width: 899px) {
+    flex: 1 1 100%; // Full width on smaller screens.
+    max-width: 100%; // Ensures the container takes full width.
+  }
+}
+
+.profile-picture {
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+@media (min-width: 900px) {
+  .testimonial-container {
+    width: calc(50% - 2rem);
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  h2 {
+    margin-bottom: 0px;
+    color: #56cacc;
+    font-weight: lighter;
+    margin-left: 1rem;
+  }
+  margin-bottom: 1rem;
+}
+
+.quote {
+  color: #c5c5c5;
+  font-weight: 900;
+  font-size: xx-large;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 5px;
+  position: relative;
+  bottom: -10px;
+  padding: 5px;
+}
+
+.testimonial-text {
+  flex-grow: 1;
+  padding: 20px;
+  text-align: justify;
+  color: #484848;
+}
