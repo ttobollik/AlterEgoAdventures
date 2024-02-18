@@ -27,7 +27,13 @@ export class GalleryService {
       .get<Data>(this.apiUrl, { headers })
       .pipe(
         tap((data) => {
-          this.galleryDataSubject.next(data['records']);
+          this.galleryDataSubject.next(
+            data['records'].sort((a: any, b: any) => {
+              const idA = parseInt(a.fields.id, 10);
+              const idB = parseInt(b.fields.id, 10);
+              return idB - idA;
+            })
+          );
         })
       )
       .subscribe();

@@ -31,8 +31,9 @@ export class SignUpComponent {
     private emailService: EmailService
   ) {
     this.signUpForm = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
+      name: new FormControl('', Validators.required),
+      jumps: new FormControl('', Validators.required),
+      referral: new FormControl('', Validators.required),
       tripId: new FormControl('', Validators.required),
       package: new FormControl('', Validators.required),
       discipline: new FormControl(''),
@@ -45,8 +46,9 @@ export class SignUpComponent {
   onSubmit() {
     if (this.signUpForm.valid) {
       const formValues = {
-        firstName: this.signUpForm.value.firstName,
-        lastName: this.signUpForm.value.lastName,
+        name: this.signUpForm.value.name,
+        jumps: this.signUpForm.value.jumps,
+        referral: this.signUpForm.value.referral,
         tripId: this.signUpForm.value.tripId,
         package: this.signUpForm.value.package,
         discipline: this.signUpForm.value.discipline,

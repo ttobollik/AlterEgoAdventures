@@ -32,17 +32,9 @@ export class ExpeditionComponent {
     private route: ActivatedRoute,
     private router: Router,
     private datePipe: DatePipe
-  ) {}
-
-  included = [
-    '5-1 Load Organizing',
-    'PAC 750 XL',
-    'Daily transport',
-    'INHOPPS',
-    'Partial meals on jumping days',
-    'Safety USPA ST&As',
-    'Merchandise *Jersey, T shirt',
-  ];
+  ) {
+    this.expedition$.subscribe((x) => console.log(x));
+  }
 
   expedition$ = this.route.paramMap.pipe(
     switchMap((params) => {

@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="main-layout">
+    <h1>What's new?</h1>
+    <div *ngIf="news$ | async" class="testimonials-wrapper">
+      <div
+        *ngFor="let new of (news$ | async).records"
+        class="testimonial-container m-2 p-3"
+      >
+        <h2>{{ new.fields.Title }}</h2>
+        <div class="content">
+          <img [src]="new.fields.ImageUrl" class="profile-picture" />
+          <div
+            class="description p-2"
+            [innerHTML]="new.fields.Content | paragraph"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

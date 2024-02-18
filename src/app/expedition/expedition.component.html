@@ -26,7 +26,7 @@
     </ngb-carousel>
 
     <div class="main-layout">
-      <p class="py-4">{{ expedition.fields.long_description }} test</p>
+      <p class="py-4">{{ expedition.fields.long_description }}</p>
 
       <span class="pricing px-3">
         <div class="package bronze mb-3">
@@ -53,18 +53,17 @@
       </span>
 
       <div>
-        <p>
-          *Accomodation not included <br />
-          except for Nosy-Be, Madagascar there will be accommodation available
-          from budget to 5 star luxury for you to choose from
-        </p>
-        <p class="px-3">Extra jumps can be purchased for 50 USD a jump</p>
-        <p>Tandem jumps are available</p>
+        <div
+          class="description px-4"
+          [innerHTML]="expedition.fields.disclaimer | paragraph"
+        ></div>
 
         <h2>All jump packages include:</h2>
         <div class="list-container">
           <ul class="list">
-            <li *ngFor="let item of included">
+            <li
+              *ngFor="let item of expedition.fields.included_list.split('\n')"
+            >
               <input type="checkbox" checked="checked" readonly disabled />
               <span class="checkmark"></span>
               {{ item }}
@@ -73,9 +72,9 @@
         </div>
 
         <p class="px-3">
-          There are various accommodation options available, and they can be
-          arranged for ALL – Inclusive to budget accomodation. Please contact us
-          for specific pricing.
+          If you would like Alter Ego Adventures to provide accommodation in
+          your package which ranges from ALL – Inclusive to budget
+          accommodation, then please contact us for specific pricing.
         </p>
       </div>
     </div>
