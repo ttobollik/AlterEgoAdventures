@@ -32,7 +32,7 @@ jobs:
         sed -i 's|BREVO_API_KEY_PLACEHOLDER|'"${{ secrets.APIKEYBREVO }}"'|g' src/environments/environment.prod.ts
     
     - name: Build production app
-      run: ng build --configuration production --verbose
+      run: ng build --configuration production --base-href="/AlterEgoAdventures/"
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.0
