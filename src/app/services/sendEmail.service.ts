@@ -42,7 +42,7 @@ export class EmailService {
           return throwError(error);
         })
       )
-      .subscribe((x) => {
+      .subscribe(() => {
         this.toastr.success(
           'You are all set!',
           'You will receive an email soon.'
