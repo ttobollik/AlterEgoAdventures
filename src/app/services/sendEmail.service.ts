@@ -16,18 +16,6 @@ export class EmailService {
 
   private apiKey = environment.apiKeyBrevo;
 
-  sendEmailAWS(emailData: any): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
-
-    const apiUrl =
-      'https://cbwqx9au58.execute-api.eu-north-1.amazonaws.com/testing/sendEmailToAlterEgo';
-    return this.http.post(apiUrl, emailData, httpOptions);
-  }
-
   sendEmail(emailData: any) {
     const data = {
       templateId: 1,
