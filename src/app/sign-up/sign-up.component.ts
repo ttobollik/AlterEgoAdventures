@@ -33,32 +33,58 @@ export class SignUpComponent {
     this.signUpForm = new FormGroup({
       name: new FormControl('', Validators.required),
       jumps: new FormControl('', Validators.required),
-      referral: new FormControl('', Validators.required),
+      referral: new FormControl(''),
       tripId: new FormControl('', Validators.required),
       package: new FormControl('', Validators.required),
       discipline: new FormControl(''),
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl(''), // Validators for phone number required
       comments: new FormControl(''),
+      //policiesRead: new FormControl(false, Validators.required),
+      dates: new FormControl(''),
     });
+
+    /*  this.signUpForm = new FormGroup({
+      name: new FormControl(''),
+      jumps: new FormControl(''),
+      referral: new FormControl(''),
+      tripId: new FormControl(''),
+      package: new FormControl(''),
+      discipline: new FormControl(''),
+      email: new FormControl(''),
+      phone: new FormControl(''), // Validators for phone number required
+      comments: new FormControl(''),
+      policiesRead: new FormControl(false),
+      dates: new FormControl(''),
+    }); */
   }
 
   onSubmit() {
     if (this.signUpForm.valid) {
-      const formValues = {
-        name: this.signUpForm.value.name,
-        jumps: this.signUpForm.value.jumps,
-        referral: this.signUpForm.value.referral,
-        tripId: this.signUpForm.value.tripId,
-        package: this.signUpForm.value.package,
-        discipline: this.signUpForm.value.discipline,
-        email: this.signUpForm.value.email,
-        phone: this.signUpForm.value.phone,
-        comments: this.signUpForm.value.comments,
-      };
-
-      this.emailService.sendEmail(formValues).subscribe();
-      this.activeModal.close();
+      this.upcomingService
+        .getRecordById(this.signUpForm.value.tripId)
+        .subscribe((trip) => {
+          const formValues = {
+            name: this.signUpForm.value.name,
+            jumps: this.signUpForm.value.jumps,
+            referral: this.signUpForm.value.referral,
+            tripId: trip?.fields.title,
+            package: this.signUpForm.value.package,
+            discipline: this.signUpForm.value.discipline ?? '-',
+            email: this.signUpForm.value.email,
+            phone: this.signUpForm.value.phone,
+            comments: this.signUpForm.value.comments,
+            policiesRead: this.signUpForm.value.policiesRead,
+            dates: trip
+              ? this.formatTripDates(
+                  trip?.fields.start_date,
+                  trip?.fields.end_date
+                )
+              : '-',
+          };
+          this.emailService.sendEmail(formValues);
+          this.activeModal.close();
+        });
     }
   }
 
@@ -66,5 +92,51 @@ export class SignUpComponent {
 
   dismiss() {
     this.activeModal.dismiss();
+  }
+
+  formatTripDates(startDateStr: Date, endDateStr: Date): string {
+    const startDate = new Date(startDateStr);
+    const endDate = new Date(endDateStr);
+
+    const optionsWithoutYear: Intl.DateTimeFormatOptions = {
+      day: 'numeric',
+      month: 'long',
+    };
+
+    const optionsWithYear: Intl.DateTimeFormatOptions = {
+      ...optionsWithoutYear,
+      year: 'numeric',
+    };
+
+    const startDateFormatter = new Intl.DateTimeFormat(
+      'en-US',
+      optionsWithoutYear
+    );
+
+    const endDateFormatter = new Intl.DateTimeFormat('en-US', optionsWithYear);
+
+    const formatDayWithSuffix = (date: Date) => {
+      const day = date.getDate();
+      let suffix = 'th';
+      if (day === 1 || day === 21 || day === 31) suffix = 'st';
+      else if (day === 2 || day === 22) suffix = 'nd';
+      else if (day === 3 || day === 23) suffix = 'rd';
+
+      return `${day}${suffix}`;
+    };
+
+    const formattedStartDate = startDateFormatter
+      .format(startDate)
+      .replace(/^\d+/, (match) => formatDayWithSuffix(startDate));
+    const formattedEndDate = endDateFormatter
+      .format(endDate)
+      .replace(/^\d+/, (match) => formatDayWithSuffix(endDate));
+
+    const formattedEndDateWithoutYear = formattedEndDate
+      .split(' ')
+      .slice(0, 2)
+      .join(' ');
+
+    return `${formattedStartDate} - ${formattedEndDateWithoutYear} ${endDate.getFullYear()}`;
   }
 }

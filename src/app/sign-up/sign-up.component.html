@@ -17,16 +17,12 @@
         class="form-control"
         id="trip"
         formControlName="tripId"
-        required
         [ngClass]="{
           placeholder_select: signUpForm.get('tripId')?.value == ''
         }"
       >
         <option value="" disabled selected>Select a trip...</option>
-        <option
-          *ngFor="let trip of upcomingData$ | async"
-          [value]="trip.fields.title"
-        >
+        <option *ngFor="let trip of upcomingData$ | async" [value]="trip.id">
           {{ trip.fields.title }}
         </option>
       </select>
@@ -50,7 +46,6 @@
             formControlName="package"
             class="form-check-input"
             [value]="package"
-            required
           />
           <label [for]="package + 'Package'" class="form-check-label">{{
             package | titlecase
@@ -80,7 +75,7 @@
     </div>
 
     <div class="form-group">
-      <label for="jumps">How many jumps do you have?</label>
+      <label for="jumps">How many jumps do you have? *</label>
       <input
         type="number"
         class="form-control"
@@ -112,7 +107,6 @@
         class="form-control"
         id="ame"
         formControlName="name"
-        required
         placeholder="Enter your full name..."
       />
       <div
@@ -130,7 +124,6 @@
         class="form-control"
         id="email"
         formControlName="email"
-        required
         placeholder="Enter your email..."
       />
       <div
@@ -164,13 +157,31 @@
       ></textarea>
     </div>
     <div class="form-group">
-      <label for="flotationDevice">Flotation Device Notification</label>
+      <!--  <label for="flotationDevice">Flotation Device Notification</label> -->
       <div class="alert alert-info" role="alert">
         Comment: If you have 500 jumps or less, you must bring and wear a
         flotation device on skydives. If you are wingsuiting, you must also
         bring and wear a flotation device.
       </div>
     </div>
+    <!--  <div class="form-group" style="display: flex">
+      <input
+        type="checkbox"
+        formControlName="policiesRead"
+        id="policiesRead"
+        style="margin-right: 1em"
+      />
+      <label for="policiesRead" class="form-check-label">
+        I have read and agree to the
+        <a href="./faq" target="_blank" rel="noopener noreferrer"
+          >Refund Policy</a
+        >
+        and
+        <a href="./privacy-policy" target="_blank" rel="noopener noreferrer"
+          >Privacy Policy</a
+        >.
+      </label>
+    </div> -->
 
     <button
       type="submit"

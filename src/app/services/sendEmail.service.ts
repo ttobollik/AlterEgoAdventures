@@ -1,14 +1,22 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EmailService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private toastr: ToastrService) {}
 
-  sendEmail(emailData: any): Observable<any> {
+  private apiKey = environment.apiKeyBrevo;
+
+  sendEmailAWS(emailData: any): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -18,5 +26,39 @@ export class EmailService {
     const apiUrl =
       'https://cbwqx9au58.execute-api.eu-north-1.amazonaws.com/testing/sendEmailToAlterEgo';
     return this.http.post(apiUrl, emailData, httpOptions);
+  }
+
+  sendEmail(emailData: any) {
+    const data = {
+      templateId: 1,
+      subject: 'Successfull Sign Up',
+      to: [{ email: emailData.email, name: emailData.name }],
+      cc: [{ email: 'tim@thealteregoproject.com', name: 'Tim Parrant' }],
+      params: emailData,
+    };
+
+    const headers = {
+      'Content-Type': 'application/json',
+      'api-key': this.apiKey,
+    };
+    this.http
+      .post('https://api.brevo.com/v3/smtp/email', data, {
+        headers: headers,
+      })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          this.toastr.error(
+            'Please contact us via email to continue.',
+            'An error occured.'
+          );
+          return throwError(error);
+        })
+      )
+      .subscribe((x) => {
+        this.toastr.success(
+          'You are all set!',
+          'You will receive an email soon.'
+        );
+      });
   }
 }

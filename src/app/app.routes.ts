@@ -7,6 +7,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ClientTestimonialsComponent } from './client-testimonials/client-testimonials.component';
 import { NewsComponent } from './news/news.component';
+import { PrivacyPolicyComponent } from './privacyPolicy/privacyPolicy.component';
 
 export const routes: Routes = [
   {
@@ -40,5 +41,9 @@ export const routes: Routes = [
   {
     path: 'news',
     component: NewsComponent,
+  },
+  {
+    path: 'privacy-policy',
+    component: PrivacyPolicyComponent,
   },
 ];

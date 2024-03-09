@@ -32,9 +32,7 @@ export class ExpeditionComponent {
     private route: ActivatedRoute,
     private router: Router,
     private datePipe: DatePipe
-  ) {
-    this.expedition$.subscribe((x) => console.log(x));
-  }
+  ) {}
 
   expedition$ = this.route.paramMap.pipe(
     switchMap((params) => {
