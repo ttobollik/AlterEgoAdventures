@@ -8,5 +8,5 @@ export const environment = {
   apiUpcomingPictures: 'tblACHTYQhrz5aoX6',
   apiTestimonials: 'tbl4n3XdpqU7AaX9I',
   apiNews: 'tblklAt9XOw63cuVp',
-  brevoApiKey: 'BREVO_API_KEY',
+  apiKeyBrevo: 'BREVO_API_KEY',
 };
