@@ -1,0 +1,12 @@
+{
+  "routes": [
+    "/",
+    "/about-us",
+    "/client-testimonials",
+    "/contact-us",
+    "/faq",
+    "/gallery",
+    "/news",
+    "/privacy-policy"
+  ]
+}
