@@ -19,6 +19,9 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
+    - name: List environment files
+      run: ls src/environments
+
     - name: Install Angular CLI
       run: npm install -g @angular/cli
 
