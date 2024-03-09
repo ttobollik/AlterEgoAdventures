@@ -27,9 +27,9 @@ jobs:
 
     - name: Replace environment variables
       run: |
-        sed -i 's|AIRTABLE_URL_PLACEHOLDER|'"${{ secrets.AIRTABLE_URL }}"'|g' src/environments/environment.prod.ts
-        sed -i 's|AIRTABLE_API_KEY_PLACEHOLDER|'"${{ secrets.AIRTABLE_API_KEY }}"'|g' src/environments/environment.prod.ts
-        sed -i 's|BREVO_API_KEY_PLACEHOLDER|'"${{ secrets.BREVO_API_KEY }}"'|g' src/environments/environment.prod.ts
+        sed -i 's|AIRTABLE_URL_PLACEHOLDER|'"${{ secrets.APIURL }}"'|g' src/environments/environment.prod.ts
+        sed -i 's|AIRTABLE_API_KEY_PLACEHOLDER|'"${{ secrets.APIKEY }}"'|g' src/environments/environment.prod.ts
+        sed -i 's|BREVO_API_KEY_PLACEHOLDER|'"${{ secrets.APIKEYBREVO }}"'|g' src/environments/environment.prod.ts
     
     - name: Build production app
       run: ng build --configuration production --verbose
