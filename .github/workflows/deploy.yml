@@ -19,6 +19,12 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
+    - name: List environment files
+      run: ls src/environments
+
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
+
     - name: Replace environment variables
       run: |
         sed -i 's|AIRTABLE_URL_PLACEHOLDER|'"${{ secrets.AIRTABLE_URL }}"'|g' src/environments/environment.prod.ts
