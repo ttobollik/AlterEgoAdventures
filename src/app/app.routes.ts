@@ -41,6 +41,11 @@ export const routes: Routes = [
     path: 'news',
     component: NewsComponent,
   },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
+  },
   /*   {
     path: 'privacy-policy',
     component: PrivacyPolicyComponent,
