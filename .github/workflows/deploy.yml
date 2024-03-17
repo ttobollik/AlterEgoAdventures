@@ -37,7 +37,7 @@ jobs:
       run: cp dist/alter-ego-adventures/browser/index.html dist/alter-ego-adventures/browser/404.html
 
     - name: Add custom script to 404.html
-      run: echo "<script>sessionStorage.redirect = location.href; location.replace('/');</script>" >> dist/your-app-name/404.html
+      run: echo "<script>sessionStorage.redirect = location.href; location.replace('/');</script>" >> dist/alter-ego-adventures/browser/404.html
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.0
