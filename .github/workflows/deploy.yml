@@ -34,7 +34,7 @@ jobs:
       run: ng build --configuration production --base-href="https://ttobollik.github.io/AlterEgoAdventures/"
 
     - name: Prepare 404.html
-      run: cp dist/alter-ego-adventures/browser/index.html dist/your-app-name/404.html
+      run: cp dist/alter-ego-adventures/browser/index.html dist/alter-ego-adventures/browser/404.html
 
     - name: Add custom script to 404.html
       run: echo "<script>sessionStorage.redirect = location.href; location.replace('/');</script>" >> dist/your-app-name/404.html
