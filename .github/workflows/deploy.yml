@@ -32,7 +32,7 @@ jobs:
 
     
     - name: Build production app
-      run: ng build --configuration production --base-href="/AlterEgoAdventures/"
+      run: ng build --configuration production --base-href="https://ttobollik.github.io/AlterEgoAdventures/"
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.0
