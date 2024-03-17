@@ -30,9 +30,14 @@ jobs:
         sed -i 's|AIRTABLE_URL_PLACEHOLDER|'"${{ secrets.APIURL }}"'|g' src/environments/environment.prod.ts
         sed -i 's|AIRTABLE_API_KEY_PLACEHOLDER|'"${{ secrets.APIKEY }}"'|g' src/environments/environment.prod.ts
 
-    
     - name: Build production app
       run: ng build --configuration production --base-href="https://ttobollik.github.io/AlterEgoAdventures/"
+
+    - name: Prepare 404.html
+      run: cp dist/alter-ego-adventures/browser/index.html dist/your-app-name/404.html
+
+    - name: Add custom script to 404.html
+      run: echo "<script>sessionStorage.redirect = location.href; location.replace('/');</script>" >> dist/your-app-name/404.html
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.0
